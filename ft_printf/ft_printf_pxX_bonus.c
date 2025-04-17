@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_pxX _bonus.c                             :+:      :+:    :+:   */
+/*   ft_printf_pxX_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:01:07 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 23:01:57 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/17 23:27:23 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	putstr_n_for_px_b(char *s, int strlen, t_info *info, int decimal)
 	int	i;
 
 	i = 0;
-	if (decimal == 0 && info->period > -1 && info->precision == 0 && info->type == 'p')
+	if (decimal == 0 && info->period > -1 && info->precision == 0 && \
+		info->type == 'p')
 	{
 		while (s[i])
 		{
@@ -34,11 +35,9 @@ int	putstr_n_for_px_b(char *s, int strlen, t_info *info, int decimal)
 		i++;
 		return (i);
 	}
-	while (s[i] && i < strlen && !(decimal == 0 && info->period > -1 && info->precision == 0 &&(info->type == 'x' || info->type == 'X')))
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
+	while (s[i] && i < strlen && !(decimal == 0 && info->period > -1 && \
+		info->precision == 0 && (info->type == 'x' || info->type == 'X')))
+		write(1, &s[i++], 1);
 	return (i);
 }
 
@@ -56,7 +55,7 @@ int	calculate_str_length_b(t_info *info, int strlen, unsigned long decimal)
 	return (length);
 }
 
-int	process_px_b(t_info *info, unsigned long decimal, char *str, int strlen)
+int	proce_px_b(t_info *info, unsigned long decimal, char *str, int strlen)
 {
 	int	printed_bytes;
 
@@ -92,7 +91,7 @@ int	print_px_b(t_info *info, va_list args)
 		decimal = (unsigned long)va_arg(args, unsigned int);
 	str = change_deciaml_to_hexa_b(info, decimal);
 	strlen = ft_strlen(str);
-	printed_bytes += process_px_b(info, decimal, str, strlen);
+	printed_bytes += proce_px_b(info, decimal, str, strlen);
 	free(str);
 	return (printed_bytes);
 }

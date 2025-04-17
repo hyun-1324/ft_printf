@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:11:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 22:53:25 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/17 23:26:30 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int		put_prefix_width_b(int printed_bytes, t_info *info, \
 int		put_prefix_b(int printed_bytes, t_info *info, unsigned long decimal);
 int		calculate_str_length_b(t_info *info, int strlen, unsigned long decimal);
 int		put_zero_for_px_str_b(int strlen, t_info *info);
-int		process_px_b(t_info *info, unsigned long decimal, char *str, int strlen);
+int		proce_px_b(t_info *info, unsigned long decimal, char *str, int strlen);
 int		print_px_b(t_info *info, va_list args);
 #endif

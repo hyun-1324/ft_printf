@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:01:07 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 22:16:42 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/17 23:25:45 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	putstr_n_for_px(char *s, int strlen, t_info *info, int decimal)
 	int	i;
 
 	i = 0;
-	if (decimal == 0 && info->period > -1 && info->precision == 0 && info->type == 'p')
+	if (decimal == 0 && info->period > -1 && info->precision \
+		== 0 && info->type == 'p')
 	{
 		while (s[i])
 		{
@@ -34,11 +35,9 @@ int	putstr_n_for_px(char *s, int strlen, t_info *info, int decimal)
 		i++;
 		return (i);
 	}
-	while (s[i] && i < strlen && !(decimal == 0 && info->period > -1 && info->precision == 0 &&(info->type == 'x' || info->type == 'X')))
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
+	while (s[i] && i < strlen && !(decimal == 0 && info->period > -1 && \
+		info->precision == 0 && (info->type == 'x' || info->type == 'X')))
+		write(1, &s[i++], 1);
 	return (i);
 }
 
