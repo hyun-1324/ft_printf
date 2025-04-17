@@ -7,7 +7,12 @@ SRCS	= ft_printf.c ft_printf_utils.c ft_printf_percent.c  \
 		  ft_printf_pxX.c ft_printf_pxX_utils.c ft_printf_type_utils.c \
 		  ft_printf_di_utils.c
 
-BNS_SRCS =
+BNS_SRCS =ft_printf_bonus.c ft_printf_utils_bonus.c \
+		  ft_printf_percent_bonus.c ft_printf_c_bonus.c \
+		  ft_printf_s_bonus.c ft_printf_u_bonus.c \
+		  ft_printf_di_bonus.c ft_printf_pxX_bonus.c \
+		  ft_printf_pxX_utils_bonus.c ft_printf_type_utils_bonus.c \
+		  ft_printf_di_utils_bonus.c
 
 OBJS = $(SRCS:%.c=%.o)
 
@@ -39,12 +44,12 @@ bonus :
 	make WITH_BONUS=0 all
 
 clean :
-	rm -f $(OBJS) $(BNS_OBJS)
+	$(RM) $(OBJS) $(BNS_OBJS)
 	make clean -C $(LIBFT)
 
 fclean : clean
-	rm -f $(NAME)
-	rm -f $(LIBFT_LIB)
+	$(RM) $(NAME)
+	$(RM) $(LIBFT_LIB)
 	make fclean -C $(LIBFT)
 
 re : fclean all

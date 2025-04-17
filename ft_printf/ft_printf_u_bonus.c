@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_u.c                                      :+:      :+:    :+:   */
+/*   ft_printf_u_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 12:17:42 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 22:16:59 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/17 23:17:08 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 #include "./libft/libft.h"
 
-int	put_space_or_zero_for_u(int printed_bytes, t_info *info)
+int	put_space_or_zero_for_u_b(int printed_bytes, t_info *info)
 {
 	int	count;
 
@@ -37,7 +37,7 @@ int	put_space_or_zero_for_u(int printed_bytes, t_info *info)
 	return (count);
 }
 
-int	putstr_n_for_u(char *s, int strlen, unsigned int u, t_info *info)
+int	putstr_n_for_u_b(char *s, int strlen, unsigned int u, t_info *info)
 {
 	int	i;
 
@@ -66,7 +66,7 @@ int	putstr_n_for_u(char *s, int strlen, unsigned int u, t_info *info)
 	return (i);
 }
 
-char	*fill_unsigned_str(unsigned int n, char *str, int len, int tmp)
+char	*fill_unsigned_str_b(unsigned int n, char *str, int len, int tmp)
 {
 	str[len + tmp] = '\0';
 	while (len--)
@@ -79,7 +79,7 @@ char	*fill_unsigned_str(unsigned int n, char *str, int len, int tmp)
 	return (str);
 }
 
-char	*ft_utoa(unsigned int n, t_info *info)
+char	*ft_utoa_b(unsigned int n, t_info *info)
 {
 	unsigned int	tmp;
 	int				len;
@@ -103,11 +103,11 @@ char	*ft_utoa(unsigned int n, t_info *info)
 		str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
-	str = fill_unsigned_str(n, str, len, tmp);
+	str = fill_unsigned_str_b(n, str, len, tmp);
 	return (str);
 }
 
-int	print_u(t_info *info, va_list args)
+int	print_u_b(t_info *info, va_list args)
 {
 	int				printed_bytes;
 	int				strlen;
@@ -116,19 +116,19 @@ int	print_u(t_info *info, va_list args)
 
 	printed_bytes = 0;
 	i = va_arg(args, unsigned int);
-	u = ft_utoa(i, info);
+	u = ft_utoa_b(i, info);
 	if (!u)
 		return (0);
 	strlen = ft_strlen(u);
 	if (info->minus > -1)
 	{
-		printed_bytes += putstr_n_for_u(u, strlen, i, info);
-		printed_bytes += put_space(strlen, info);
+		printed_bytes += putstr_n_for_u_b(u, strlen, i, info);
+		printed_bytes += put_space_b(strlen, info);
 	}
 	else
 	{
-		printed_bytes += put_space_or_zero_for_u(strlen, info);
-		printed_bytes += putstr_n_for_u(u, strlen, i, info);
+		printed_bytes += put_space_or_zero_for_u_b(strlen, info);
+		printed_bytes += putstr_n_for_u_b(u, strlen, i, info);
 	}
 	free(u);
 	return (printed_bytes);
