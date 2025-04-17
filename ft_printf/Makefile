@@ -1,6 +1,3 @@
-$(info BNS_OBJS = $(BNS_OBJS))
-$(info OBJ_FILES = $(OBJ_FILES))
-
 NAME = libftprintf.a
 LIBFT = libft
 LIBFT_LIB = libft.a
@@ -27,20 +24,20 @@ RM = rm -f
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	make all -C $(LIBFT)/
+	make all -C $(LIBFT)
 	cp $(LIBFT)/$(LIBFT_LIB) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 
 %_bonus.o:%_bonus.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 %.o:%.c
-	$(CC) $(FLAGS) -c $< -I./ -o $@
+	$(CC) $(CFLAGS) -c $< -I./ -o $@
 
 bonus : all $(BNS_OBJS)
 	$(AR) $(NAME) $(BNS_OBJS)
@@ -51,7 +48,6 @@ clean :
 
 fclean : clean
 	$(RM) $(NAME)
-	$(RM) $(LIBFT_LIB)
 	make fclean -C $(LIBFT)
 
 re : fclean all
