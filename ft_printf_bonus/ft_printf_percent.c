@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_c.c                                      :+:      :+:    :+:   */
+/*   ft_printf_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 08:24:38 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/08 14:42:51 by donheo           ###   ########.fr       */
+/*   Created: 2025/04/03 09:30:46 by donheo            #+#    #+#             */
+/*   Updated: 2025/04/17 22:16:31 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "./libft/libft.h"
 
-int	print_c(t_info *info, va_list args)
+int	print_percent(t_info *info)
 {
-	int				printed_bytes;
-	unsigned char	c;
+	int	printed_bytes;
 
 	printed_bytes = 0;
-	c = (unsigned char)va_arg(args, int);
 	if (info->minus > -1)
 	{
-		write(1, &c, 1);
+		write(1, "%", 1);
 		printed_bytes++;
-		printed_bytes += print_padding_space(info);
 	}
 	else
 	{
-		printed_bytes += print_padding_space(info);
-		write(1, &c, 1);
+		write(1, "%", 1);
 		printed_bytes++;
 	}
 	return (printed_bytes);
