@@ -6,14 +6,14 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 10:02:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 23:02:46 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 10:04:18 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 #include "./libft/libft.h"
 
-int	get_printable_strlen_b(char *s, t_info *info)
+int	get_printable_strlen(char *s, t_info *info)
 {
 	int	strlen;
 
@@ -26,7 +26,7 @@ int	get_printable_strlen_b(char *s, t_info *info)
 	return (strlen);
 }
 
-int	put_space_b(int printed_bytes, t_info *info)
+int	put_space(int printed_bytes, t_info *info)
 {
 	int	count;
 
@@ -42,7 +42,7 @@ int	put_space_b(int printed_bytes, t_info *info)
 	return (count);
 }
 
-int	print_s_b(t_info *info, va_list args)
+int	print_s(t_info *info, va_list args)
 {
 	int		printed_bytes;
 	int		strlen;
@@ -52,16 +52,16 @@ int	print_s_b(t_info *info, va_list args)
 	s = va_arg(args, char *);
 	if (s == NULL)
 		s = "(null)";
-	strlen = get_printable_strlen_b(s, info);
+	strlen = get_printable_strlen(s, info);
 	if (info->minus > -1)
 	{
-		printed_bytes += putstr_n_b(s, strlen);
-		printed_bytes += put_space_b(printed_bytes, info);
+		printed_bytes += putstr_n(s, strlen);
+		printed_bytes += put_space(printed_bytes, info);
 	}
 	else
 	{
-		printed_bytes += put_space_b(strlen, info);
-		printed_bytes += putstr_n_b(s, strlen);
+		printed_bytes += put_space(strlen, info);
+		printed_bytes += putstr_n(s, strlen);
 	}
 	return (printed_bytes);
 }

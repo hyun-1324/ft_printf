@@ -6,14 +6,14 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:26:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 23:01:29 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 10:03:10 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 #include "./libft/libft.h"
 
-int	putstr_n_for_di_b(char *s, int strlen, t_info *info, int di)
+int	putstr_n_for_di(char *s, int strlen, t_info *info, int di)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ int	putstr_n_for_di_b(char *s, int strlen, t_info *info, int di)
 	return (i);
 }
 
-int	calculate_length_of_chars_for_di_b(t_info *info, int strlen, int di)
+int	calculate_length_of_chars_for_di(t_info *info, int strlen, int di)
 {
 	int	printed_bytes;
 
@@ -53,7 +53,7 @@ int	calculate_length_of_chars_for_di_b(t_info *info, int strlen, int di)
 	return (printed_bytes);
 }
 
-static int	count_len_b(long n)
+static int	count_len(long n)
 {
 	int		len;
 	long	num;
@@ -75,7 +75,7 @@ static int	count_len_b(long n)
 	return (len);
 }
 
-static void	convert_b(int n, char *str, int len)
+static void	convert(int n, char *str, int len)
 {
 	long	num;
 
@@ -95,15 +95,15 @@ static void	convert_b(int n, char *str, int len)
 	}
 }
 
-char	*ft_itoa_for_long_b(long n)
+char	*ft_itoa_for_long(long n)
 {
 	int		len;
 	char	*str;
 
-	len = count_len_b(n);
+	len = count_len(n);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	convert_b(n, str, len);
+	convert(n, str, len);
 	return (str);
 }

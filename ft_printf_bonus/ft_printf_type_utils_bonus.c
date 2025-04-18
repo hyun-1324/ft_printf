@@ -6,14 +6,14 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 08:45:36 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 22:55:21 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 10:04:34 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 #include "./libft/libft.h"
 
-int	put_space_or_zero_b(int printed_bytes, t_info *info)
+int	put_space_or_zero(int printed_bytes, t_info *info)
 {
 	int	count;
 
@@ -37,7 +37,7 @@ int	put_space_or_zero_b(int printed_bytes, t_info *info)
 	return (count);
 }
 
-int	putstr_n_b(char *s, int strlen)
+int	putstr_n(char *s, int strlen)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ int	putstr_n_b(char *s, int strlen)
 	return (i);
 }
 
-int	put_zero_b(int strlen, t_info *info)
+int	put_zero(int strlen, t_info *info)
 {
 	int	i;
 	int	printed_bytes;
@@ -67,7 +67,7 @@ int	put_zero_b(int strlen, t_info *info)
 	return (printed_bytes);
 }
 
-int	print_padding_space_b(t_info *info)
+int	print_padding_space(t_info *info)
 {
 	int	padding;
 

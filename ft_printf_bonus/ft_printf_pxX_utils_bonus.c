@@ -6,14 +6,14 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:36:16 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 23:02:18 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 10:04:03 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 #include "./libft/libft.h"
 
-char	*change_deciaml_to_hexa_b(t_info *info, unsigned long p)
+char	*change_deciaml_to_hexa(t_info *info, unsigned long p)
 {
 	const char	*base;
 	char		buffer[9];
@@ -39,7 +39,7 @@ char	*change_deciaml_to_hexa_b(t_info *info, unsigned long p)
 	return (str);
 }
 
-int	put_hash_b(t_info *info, unsigned long p)
+int	put_hash(t_info *info, unsigned long p)
 {
 	int	printed_bytes;
 
@@ -55,14 +55,14 @@ int	put_hash_b(t_info *info, unsigned long p)
 	return (printed_bytes);
 }
 
-int	put_prefix_width_b(int printed_bytes, t_info *info, unsigned long decimal)
+int	put_prefix_width(int printed_bytes, t_info *info, unsigned long decimal)
 {
 	int	count;
 
 	count = 0;
 	if (info->zero > -1 && info->period == -1)
 	{
-		count += put_hash_b(info, decimal);
+		count += put_hash(info, decimal);
 		while (printed_bytes + count < info->width)
 		{
 			write(1, "0", 1);
@@ -76,26 +76,26 @@ int	put_prefix_width_b(int printed_bytes, t_info *info, unsigned long decimal)
 		write(1, " ", 1);
 		count++;
 	}
-	count += put_hash_b(info, decimal);
+	count += put_hash(info, decimal);
 	if (info->hash > -1)
 		count -= 2;
 	return (count);
 }
 
-int	put_prefix_b(int printed_bytes, t_info *info, unsigned long decimal)
+int	put_prefix(int printed_bytes, t_info *info, unsigned long decimal)
 {
 	int	count;
 
 	count = 0;
 	if (info->width > 0)
-		count += put_prefix_width_b(printed_bytes, info, decimal);
+		count += put_prefix_width(printed_bytes, info, decimal);
 	else if ((info->width == 0 && info->type == 'p') || ((info->type == 'x' \
 		|| info->type == 'X') && info->hash > -1))
-		count += put_hash_b(info, decimal);
+		count += put_hash(info, decimal);
 	return (count);
 }
 
-int	put_zero_for_px_str_b(int strlen, t_info *info)
+int	put_zero_for_px_str(int strlen, t_info *info)
 {
 	int	i;
 	int	printed_bytes;

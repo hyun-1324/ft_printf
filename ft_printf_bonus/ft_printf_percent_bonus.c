@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_percent _bonus.c                         :+:      :+:    :+:   */
+/*   ft_printf_percent_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 09:30:46 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/17 22:54:12 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 10:03:25 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 #include "./libft/libft.h"
 
-int	print_percent_b(t_info *info)
+int	print_percent(t_info *info)
 {
 	int	printed_bytes;
 
