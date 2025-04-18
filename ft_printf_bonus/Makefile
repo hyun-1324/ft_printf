@@ -33,7 +33,7 @@ $(NAME) : $(OBJS)
 	cp $(LIBFT)/$(LIBFT_LIB) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 
-%.o : %.c ft_printf.h
+%.o : %.c ft_printf.h ft_printf_bonus.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus : all $(BNS_OBJS)

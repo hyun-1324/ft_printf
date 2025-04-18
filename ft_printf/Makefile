@@ -7,12 +7,7 @@ SRCS	= ft_printf.c ft_printf_utils.c ft_printf_percent.c\
 		  ft_printf_pxX.c ft_printf_pxX_utils.c ft_printf_type_utils.c\
 		  ft_printf_di_utils.c
 
-BNS_SRCS =ft_printf_bonus.c ft_printf_utils_bonus.c\
-		  ft_printf_percent_bonus.c ft_printf_c_bonus.c\
-		  ft_printf_s_bonus.c ft_printf_u_bonus.c\
-		  ft_printf_di_bonus.c ft_printf_pxX_bonus.c\
-		  ft_printf_pxX_utils_bonus.c ft_printf_type_utils_bonus.c\
-		  ft_printf_di_utils_bonus.c
+BNS_SRCS =
 
 OBJS = $(SRCS:%.c=%.o)
 
@@ -36,8 +31,7 @@ $(NAME) : $(OBJS)
 %.o : %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus : all $(BNS_OBJS)
-	$(AR) $(NAME) $(BNS_OBJS)
+bonus :
 
 clean :
 	$(RM) $(OBJS) $(BNS_OBJS)
