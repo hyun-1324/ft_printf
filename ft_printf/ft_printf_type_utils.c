@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 08:45:36 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/08 18:32:29 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/19 19:18:44 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,20 @@ int	print_padding_space(t_info *info)
 		padding++;
 	}
 	return (padding);
+}
+
+int	put_space(int printed_bytes, t_info *info)
+{
+	int	count;
+
+	count = 0;
+	if (info->width > 0)
+	{
+		while (printed_bytes + count < info->width)
+		{
+			write(1, " ", 1);
+			count++;
+		}
+	}
+	return (count);
 }

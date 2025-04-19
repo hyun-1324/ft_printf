@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 10:02:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/18 10:04:18 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/19 19:21:49 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,6 @@ int	get_printable_strlen(char *s, t_info *info)
 		while (info->precision > strlen && s[strlen])
 			strlen++;
 	return (strlen);
-}
-
-int	put_space(int printed_bytes, t_info *info)
-{
-	int	count;
-
-	count = 0;
-	if (info->width > 0)
-	{
-		while (printed_bytes + count < info->width)
-		{
-			write(1, " ", 1);
-			count++;
-		}
-	}
-	return (count);
 }
 
 int	print_s(t_info *info, va_list args)
