@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 17:08:58 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 13:21:28 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 15:49:38 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ int	ft_printf(const char *format, ...)
 	int		printed_size;
 
 	va_start(args, format);
+	if (format == NULL)
+		return (-1);
 	printed_size = parse_format(format, args);
 	va_end(args);
 	return (printed_size);

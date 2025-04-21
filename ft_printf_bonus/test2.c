@@ -4,15 +4,13 @@
 
 int	main(void)
 {
-	int printed1 = 0;
-	int printed2 = 0;
+	printf("===== %% TEST =====\n");
+	int	printed1 = 0;
+	int	printed2 = 0;
 
-	char ch = NULL;
+	printed1 = ft_printf(NULL);
+	printed2 = printf(NULL);
 
-	printf("===== %%c (char = 'A') TEST =====\n");
-
-	printed1 = ft_printf("ft : [%c]\n", ch);
-	printed2 = printf(   "lib: [%c]\n", ch);
-	printf("-> Printed (basic): ft_printf = %d, printf = %d\n\n", printed1, printed2);
-	return (0);
+	printf("%d\n", printed1);
+	printf("%d\n", printed2);
 }
