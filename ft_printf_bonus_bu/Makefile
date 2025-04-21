@@ -2,12 +2,10 @@ NAME = libftprintf.a
 LIBFT = libft
 LIBFT_LIB = libft.a
 
-SRCS	= ft_printf_bonus.c ft_printf_utils_bonus.c\
-		  ft_printf_percent_bonus.c ft_printf_c_bonus.c\
-		  ft_printf_s_bonus.c ft_printf_u_bonus.c\
-		  ft_printf_di_bonus.c ft_printf_pxX_bonus.c\
-		  ft_printf_pxX_utils_bonus.c ft_printf_type_utils_bonus.c\
-		  ft_printf_di_utils_bonus.c
+SRCS	= ft_printf.c ft_printf_utils.c ft_printf_percent.c\
+		  ft_printf_c.c ft_printf_s.c ft_printf_u.c ft_printf_di.c\
+		  ft_printf_pxX.c ft_printf_pxX_utils.c ft_printf_type_utils.c\
+		  ft_printf_di_utils.c
 
 BNS_SRCS =ft_printf_bonus.c ft_printf_utils_bonus.c\
 		  ft_printf_percent_bonus.c ft_printf_c_bonus.c\
