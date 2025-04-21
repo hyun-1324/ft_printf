@@ -6,12 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 12:17:42 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/18 10:04:59 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 13:21:57 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include "./libft/libft.h"
 
 int	put_space_or_zero_for_u(int printed_bytes, t_info *info)
 {

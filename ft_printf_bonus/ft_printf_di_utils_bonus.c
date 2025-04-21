@@ -6,12 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:26:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/18 10:03:10 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 13:21:42 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include "./libft/libft.h"
 
 int	putstr_n_for_di(char *s, int strlen, t_info *info, int di)
 {

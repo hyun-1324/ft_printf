@@ -6,12 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:36:16 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/18 10:04:03 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 13:21:51 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include "./libft/libft.h"
 
 char	*change_deciaml_to_hexa(t_info *info, unsigned long p)
 {
