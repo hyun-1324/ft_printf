@@ -5,16 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 13:44:03 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/21 14:09:04 by donheo           ###   ########.fr       */
+/*   Created: 2025/04/17 09:12:30 by donheo            #+#    #+#             */
+/*   Updated: 2025/04/18 21:05:11 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	num;
 
+	if (ft_strncmp(str, "-2147483648", 12) == 0)
+		return (INT_MIN);
 	sign = 1;
 	num = 0;
 	while (*str == ' ' || *str == '\t' || *str == '\n' || \

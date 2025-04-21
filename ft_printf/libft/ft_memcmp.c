@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 16:35:08 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/22 22:49:41 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/17 09:24:05 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (ptr1[i] != ptr2[i])
-			return ((int)(ptr1[i] - ptr2[i]));
+			return (ptr1[i] - ptr2[i]);
 		i++;
 	}
 	return (0);

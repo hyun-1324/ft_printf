@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 15:48:42 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/22 15:51:31 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 21:14:20 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

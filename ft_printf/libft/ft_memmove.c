@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 16:50:31 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/22 22:49:54 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/17 09:26:48 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	s = (const unsigned char *)src;
 	if (d == s || n == 0)
 		return (dest);
-	if (s < d && d < s + n)
+	if (s < d)
 	{
 		i = n;
 		while (i-- > 0)

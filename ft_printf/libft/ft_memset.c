@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 12:15:34 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/21 16:35:40 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 21:14:26 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

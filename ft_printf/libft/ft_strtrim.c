@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 18:28:01 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/24 20:36:11 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/16 16:57:03 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		nstr_i;
 	char	*trimstr;
 
-	if (!s1 || !set)
-		return (NULL);
 	start_i = find_start(s1, set);
 	end_i = find_end(s1, set);
 	if (end_i < start_i)
 		return (ft_strdup(""));
-	trimstr = (char *)malloc((end_i - start_i + 2) * sizeof(char));
+	trimstr = malloc((end_i - start_i + 2) * sizeof(char));
 	if (!trimstr)
 		return (NULL);
 	nstr_i = 0;
-	while (end_i +1 > start_i)
+	while (end_i + 1 > start_i)
 	{
 		trimstr[nstr_i] = s1[start_i];
 		start_i++;

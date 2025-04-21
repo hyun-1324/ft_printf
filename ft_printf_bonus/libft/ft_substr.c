@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:52:21 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/24 20:36:19 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/16 17:13:49 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > s_len - start)
 		len = s_len - start;
-	substr = (char *)malloc(sizeof(char) * (len +1));
+	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
 	i = 0;

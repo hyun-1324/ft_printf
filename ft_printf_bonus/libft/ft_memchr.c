@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 15:49:32 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/22 22:49:38 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/17 10:02:19 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (ptr[i] == (unsigned char)c)
-			return ((void *)&ptr[i]);
+			return (&(ptr[i]));
 		i++;
 	}
 	return (NULL);

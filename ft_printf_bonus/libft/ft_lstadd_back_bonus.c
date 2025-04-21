@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 09:53:26 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/24 10:08:43 by donheo           ###   ########.fr       */
+/*   Created: 2025/04/15 11:23:04 by donheo            #+#    #+#             */
+/*   Updated: 2025/04/18 15:16:19 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	count;
+	t_list	*current;
 
-	count = 0;
-	while (lst)
+	if (!*lst)
 	{
-		count++;
-		lst = lst->next;
+		*lst = new;
+		return ;
 	}
-	return (count);
+	current = *lst;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new;
 }

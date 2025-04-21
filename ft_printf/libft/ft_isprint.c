@@ -6,9 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 15:54:39 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/24 18:38:06 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/18 21:14:51 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

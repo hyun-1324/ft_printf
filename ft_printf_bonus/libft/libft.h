@@ -5,15 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 14:57:03 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/08 19:48:06 by donheo           ###   ########.fr       */
+/*   Created: 2025/04/15 11:17:49 by donheo            #+#    #+#             */
+/*   Updated: 2025/04/21 09:52:50 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stdlib.h>
-# include <stdio.h>
+# include <limits.h>
+# include <stdint.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -38,7 +41,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *src);
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);

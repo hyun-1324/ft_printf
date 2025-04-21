@@ -6,16 +6,16 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 11:33:55 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/25 15:51:00 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/19 10:19:28 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
-	int	count;
-	int	in_word;
+	size_t	count;
+	int		in_word;
 
 	count = 0;
 	in_word = 0;
@@ -37,14 +37,14 @@ static char	*word_up(const char *start, size_t len)
 {
 	char	*word;
 
-	word = (char *)malloc((len + 1) * sizeof(char));
+	word = malloc((len + 1) * sizeof(char));
 	if (!word)
 		return (NULL);
 	ft_strlcpy(word, start, len + 1);
 	return (word);
 }
 
-static void	free_all(char **split, int i)
+static void	free_all(char **split, size_t i)
 {
 	while (i--)
 		free(split[i]);
@@ -53,7 +53,7 @@ static void	free_all(char **split, int i)
 
 static int	copy_words(char const *s, char c, char **split)
 {
-	int			i;
+	size_t		i;
 	const char	*start;
 
 	i = 0;
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	split = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
 	if (!copy_words(s, c, split))

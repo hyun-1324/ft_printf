@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 16:21:53 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/24 18:57:48 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/16 11:18:06 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (dest == src)
-		return (dest);
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		((unsigned char *)dest)[i] = ((const unsigned char *)src)[i];
 		i++;
 	}
 	return (dest);

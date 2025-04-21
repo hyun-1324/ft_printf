@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 16:03:16 by donheo            #+#    #+#             */
-/*   Updated: 2025/03/22 22:49:15 by donheo           ###   ########.fr       */
+/*   Created: 2025/04/17 09:15:45 by donheo            #+#    #+#             */
+/*   Updated: 2025/04/18 21:15:09 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
