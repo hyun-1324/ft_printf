@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 09:37:27 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 13:21:39 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 15:12:28 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,12 +106,14 @@ int	process_di(t_info *info, int di, int strlen, char *str)
 int	print_di(t_info *info, va_list args)
 {
 	int		printed_bytes;
-	long	di;
+	int		di;
+	long	long_di;
 	int		strlen;
 	char	*str;
 
 	printed_bytes = 0;
-	di = (long)va_arg(args, int);
+	di = va_arg(args, int);
+	long_di = (long)di;
 	if (di < 0)
 		str = ft_itoa_for_long(-di);
 	else if (di == 0 && info->period > -1 && info->precision == 0 \
