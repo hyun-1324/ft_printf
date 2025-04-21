@@ -118,7 +118,7 @@ void	test_di()
 	int val = 42;
 	int neg_val = -42;
 
-	printf("===== %%d 테스트 (val = 42, -42) =====\n");
+	printf("===== %%d TEST (val = 42, -42) =====\n");
 
 	printed1 = ft_printf("ft : [%d]\n", val);
 	printed2 = printf(   "lib: [%d]\n", val);
