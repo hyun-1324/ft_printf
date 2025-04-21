@@ -9,16 +9,7 @@ SRCS	= ft_printf_bonus.c ft_printf_utils_bonus.c\
 		  ft_printf_pxX_utils_bonus.c ft_printf_type_utils_bonus.c\
 		  ft_printf_di_utils_bonus.c
 
-BNS_SRCS =ft_printf_bonus.c ft_printf_utils_bonus.c\
-		  ft_printf_percent_bonus.c ft_printf_c_bonus.c\
-		  ft_printf_s_bonus.c ft_printf_u_bonus.c\
-		  ft_printf_di_bonus.c ft_printf_pxX_bonus.c\
-		  ft_printf_pxX_utils_bonus.c ft_printf_type_utils_bonus.c\
-		  ft_printf_di_utils_bonus.c
-
 OBJS = $(SRCS:%.c=%.o)
-
-BNS_OBJS = $(BNS_SRCS:%.c=%.o)
 
 AR = ar rcs
 
@@ -35,14 +26,13 @@ $(NAME) : $(OBJS)
 	cp $(LIBFT)/$(LIBFT_LIB) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 
-%.o : %.c ft_printf.h ft_printf_bonus.h
+%.o : %.c ft_printf_bonus.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus : all $(BNS_OBJS)
-	$(AR) $(NAME) $(BNS_OBJS)
+bonus: all
 
 clean :
-	$(RM) $(OBJS) $(BNS_OBJS)
+	$(RM) $(OBJS)
 	make clean -C $(LIBFT)
 
 fclean : clean
