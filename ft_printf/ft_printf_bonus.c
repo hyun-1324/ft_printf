@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 17:08:58 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/07 20:34:56 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 15:49:38 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "./libft/libft.h"
+#include "ft_printf_bonus.h"
 
 int	print_arg(t_info *info, va_list args)
 {
@@ -82,6 +81,8 @@ int	ft_printf(const char *format, ...)
 	int		printed_size;
 
 	va_start(args, format);
+	if (format == NULL)
+		return (-1);
 	printed_size = parse_format(format, args);
 	va_end(args);
 	return (printed_size);

@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di_utils.c                               :+:      :+:    :+:   */
+/*   ft_printf_di_utils_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:26:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/09 09:46:17 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 13:21:42 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "./libft/libft.h"
+#include "ft_printf_bonus.h"
 
 int	putstr_n_for_di(char *s, int strlen, t_info *info, int di)
 {

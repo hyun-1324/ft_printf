@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_pxX.c                                    :+:      :+:    :+:   */
+/*   ft_printf_pxX_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:01:07 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/19 19:20:47 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/21 13:21:49 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "./libft/libft.h"
+#include "ft_printf_bonus.h"
 
 int	putstr_n_for_px(char *s, int strlen, t_info *info, int decimal)
 {
