@@ -4,46 +4,35 @@
 
 int	main(void)
 {
-	int printed1 = 0;
-	int printed2 = 0;
-	unsigned int val = 123;
+	int a = 123;
+	void *ptr = &a;
+	void *null_ptr = NULL;
+	int printed1, printed2;
 
-	printf("===== %%u (val = 123) TEST =====\n");
+	printf("===== %%p TEST =====\n");
 
-	printed1 = ft_printf("ft : [%u]\n", val);
-	printed2 = printf(   "lib: [%u]\n", val);
+	printed1 = ft_printf("ft : [%p]\n", ptr);
+	printed2 = printf(   "lib: [%p]\n", ptr);
 	printf("-> Printed (basic): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%08u]\n", val);
-	printed2 = printf(   "lib: [%08u]\n", val);
-	printf("-> Printed (width=8, zero-padding): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+	printed1 = ft_printf("ft : [%20p]\n", ptr);
+	printed2 = printf(   "lib: [%20p]\n", ptr);
+	printf("-> Printed (width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%-8u]\n", val);
-	printed2 = printf(   "lib: [%-8u]\n", val);
-	printf("-> Printed (left-align width=8): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+	printed1 = ft_printf("ft : [%-20p]\n", ptr);
+	printed2 = printf(   "lib: [%-20p]\n", ptr);
+	printf("-> Printed (left-align width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%.5u]\n", val);
-	printed2 = printf(   "lib: [%.5u]\n", val);
-	printf("-> Printed (precision=5): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+	printed1 = ft_printf("ft : [%p]\n", null_ptr);
+	printed2 = printf(   "lib: [%p]\n", null_ptr);
+	printf("-> Printed (NULL pointer): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%-8.5u]\n", val);
-	printed2 = printf(   "lib: [%-8.5u]\n", val);
-	printf("-> Printed (left-align width=8, precision=5): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+	printed1 = ft_printf("ft : [%20p]\n", null_ptr);
+	printed2 = printf(   "lib: [%20p]\n", null_ptr);
+	printf("-> Printed (NULL + width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%8.5u]\n", val);
-	printed2 = printf(   "lib: [%8.5u]\n", val);
-	printf("-> Printed (width=8, precision=5): ft_printf = %d, printf = %d\n\n", printed1, printed2);
-
-	val = 0;
-	printed1 = ft_printf("ft : [%.0u]\n", val);
-	printed2 = printf(   "lib: [%.0u]\n", val);
-	printf("-> Printed (val=0, precision=0): ft_printf = %d, printf = %d\n\n", printed1, printed2);
-
-	printed1 = ft_printf("ft : [%5.0u]\n", val);
-	printed2 = printf(   "lib: [%5.0u]\n", val);
-	printf("-> Printed (val=0, width=5, precision=0): ft_printf = %d, printf = %d\n\n", printed1, printed2);
-
-	printed1 = ft_printf("ft : [%5.1u]\n", val);
-	printed2 = printf(   "lib: [%5.1u]\n", val);
-	printf("-> Printed (val=0, width=5, precision=0): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+	printed1 = ft_printf("ft : [%p]\n", null_ptr);
+	printed2 = printf(   "lib: [%p]\n", null_ptr);
+	printf("-> Printed (NULL + width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+	return (0);
 }
