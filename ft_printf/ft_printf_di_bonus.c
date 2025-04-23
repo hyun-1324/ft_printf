@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 09:37:27 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 15:12:28 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/23 21:57:30 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ int	print_di(t_info *info, va_list args)
 	di = va_arg(args, int);
 	long_di = (long)di;
 	if (di < 0)
-		str = ft_itoa_for_long(-di);
+		str = ft_itoa_for_long(-long_di);
 	else if (di == 0 && info->period > -1 && info->precision == 0 \
 		&& info->width == -1)
 		return (printed_bytes);
