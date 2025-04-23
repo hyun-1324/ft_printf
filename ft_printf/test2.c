@@ -15,8 +15,8 @@ int	main(void)
 	printed2 = printf(   "lib: [%p]\n", ptr);
 	printf("-> Printed (basic): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%20p]\n", ptr);
-	printed2 = printf(   "lib: [%20p]\n", ptr);
+	printed1 = ft_printf("%20pk\n", ptr);
+	printed2 = printf(   "%20pk\n", ptr);
 	printf("-> Printed (width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
 	printed1 = ft_printf("ft : [%-20p]\n", ptr);
@@ -27,12 +27,12 @@ int	main(void)
 	printed2 = printf(   "lib: [%p]\n", null_ptr);
 	printf("-> Printed (NULL pointer): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%20p]\n", null_ptr);
-	printed2 = printf(   "lib: [%20p]\n", null_ptr);
-	printf("-> Printed (NULL + width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+	printed1 = ft_printf("ft : [%3p]\n", null_ptr);
+	printed2 = printf(   "lib: [%3p]\n", null_ptr);
+	printf("-> Printed (NULL pointer): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%p]\n", null_ptr);
-	printed2 = printf(   "lib: [%p]\n", null_ptr);
+	printed1 = ft_printf("%20pk\n", null_ptr);
+	printed2 = printf(   "%20pk\n", null_ptr);
 	printf("-> Printed (NULL + width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 	return (0);
 }

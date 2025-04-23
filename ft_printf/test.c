@@ -182,6 +182,10 @@ void	test_p()
 	printed2 = printf(   "lib: [%p]\n", null_ptr);
 	printf("-> Printed (NULL pointer): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
+	printed1 = ft_printf("ft : [%3p]\n", null_ptr);
+	printed2 = printf(   "lib: [%3p]\n", null_ptr);
+	printf("-> Printed (NULL pointer): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
 	printed1 = ft_printf("ft : [%20p]\n", null_ptr);
 	printed2 = printf(   "lib: [%20p]\n", null_ptr);
 	printf("-> Printed (NULL + width=20): ft_printf = %d, printf = %d\n\n", printed1, printed2);
@@ -189,6 +193,7 @@ void	test_p()
 
 void	test_xX()
 {
+
 	int printed1 = 0;
 	int printed2 = 0;
 	unsigned int val = 255;
@@ -235,17 +240,86 @@ void	test_xX()
 	printed2 = printf(   "lib: [%#.5x]\n", val);
 	printf("-> Printed (prefix + precision=5): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
+	printed1 = ft_printf("ft : [%#8.8x]\n", val);
+	printed2 = printf(   "lib: [%#8.8x]\n", val);
+	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+	printed1 = ft_printf("ft : [%#8.7x]\n", val);
+	printed2 = printf(   "lib: [%#8.7x]\n", val);
+	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("ft : [%#8.6x]\n", val);
+	printed2 = printf(   "lib: [%#8.6x]\n", val);
+	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
 	printed1 = ft_printf("ft : [%#8.5x]\n", val);
 	printed2 = printf(   "lib: [%#8.5x]\n", val);
 	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	val = 0;
-	printed1 = ft_printf("ft : [%#x]\n", val);
-	printed2 = printf(   "lib: [%#x]\n", val);
-	printf("-> Printed (val=0, prefix): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 
-	printed1 = ft_printf("ft : [%#08x]\n", val);
-	printed2 = printf(   "lib: [%#08x]\n", val);
+	printed1 = ft_printf("ft : [%#8.4x]\n", val);
+	printed2 = printf(   "lib: [%#8.4x]\n", val);
+	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("ft : [%#8.3x]\n", val);
+	printed2 = printf(   "lib: [%#8.3x]\n", val);
+	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("ft : [%#8.2x]\n", val);
+	printed2 = printf(   "lib: [%#8.2x]\n", val);
+	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("ft : [%#8.1x]\n", val);
+	printed2 = printf(   "lib: [%#8.1x]\n", val);
+	printf("-> Printed (prefix + precision + width): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	val = 0;
+
+	printed1 = ft_printf("%#04x\n", val);
+	printed2 = printf(   "%#04x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("%#02x\n", val);
+	printed2 = printf(   "%#02x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("%#0x\n", val);
+	printed2 = printf(   "%#0x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("%#04.5x\n", val);
+	printed2 = printf(   "%#04.5x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+	printed1 = ft_printf("%#04.4x\n", val);
+	printed2 = printf(   "%#04.4x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+	printed1 = ft_printf("%#04.3x\n", val);
+	printed2 = printf(   "%#04.3x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+	printed1 = ft_printf("%#04.2x\n", val);
+	printed2 = printf(   "%#04.2x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("%#04.1x\n", val);
+	printed2 = printf(   "%#04.1x\n", val);
+	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
+
+
+	printed1 = ft_printf("%#04.x\n", val);
+	printed2 = printf(   "%#04.x\n", val);
 	printf("-> Printed (val=0, prefix, zero-pad): ft_printf = %d, printf = %d\n\n", printed1, printed2);
 }
 

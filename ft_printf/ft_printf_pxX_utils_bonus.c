@@ -6,37 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:36:16 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 13:21:51 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/23 16:48:51 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-
-char	*change_deciaml_to_hexa(t_info *info, unsigned long p)
-{
-	const char	*base;
-	char		buffer[9];
-	char		*str;
-	int			i;
-
-	i = 8;
-	if (info->type == 'p' || info->type == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
-	buffer[i--] = '\0';
-	if (info->type == 'p' && p == 0)
-		return (ft_strdup("(nil)"));
-	else if (p == 0)
-		buffer[i--] = '0';
-	while (p > 0)
-	{
-		buffer[i--] = base[p % 16];
-		p /= 16;
-	}
-	str = ft_strdup(&buffer[i + 1]);
-	return (str);
-}
 
 int	put_hash(t_info *info, unsigned long p)
 {
@@ -54,28 +28,42 @@ int	put_hash(t_info *info, unsigned long p)
 	return (printed_bytes);
 }
 
+int	put_zero_and_space(int printed_bytes, t_info *info, unsigned long decimal, \
+	int *count)
+{
+	while (printed_bytes + *count < info->width && info->period != -1 \
+		&& decimal == 0)
+	{
+		write(1, " ", 1);
+		(*count)++;
+	}
+	if (info->zero > -1 && info->period == -1)
+	{
+		*count += put_hash(info, decimal);
+		while (printed_bytes + *count < info->width)
+		{
+			write(1, "0", 1);
+			(*count)++;
+		}
+	}
+	if (info->hash > -1)
+		*count += 2;
+	while (printed_bytes + *count < info->width)
+	{
+		write(1, " ", 1);
+		(*count)++;
+	}
+	return (*count);
+}
+
 int	put_prefix_width(int printed_bytes, t_info *info, unsigned long decimal)
 {
 	int	count;
 
 	count = 0;
-	if (info->zero > -1 && info->period == -1)
-	{
+	put_zero_and_space(printed_bytes, info, decimal, &count);
+	if (!(info->hash > -1 && info->zero > -1 && info->width > 0))
 		count += put_hash(info, decimal);
-		while (printed_bytes + count < info->width)
-		{
-			write(1, "0", 1);
-			count++;
-		}
-	}
-	if (info->hash > -1)
-		count = 2;
-	while (printed_bytes + count < info->width)
-	{
-		write(1, " ", 1);
-		count++;
-	}
-	count += put_hash(info, decimal);
 	if (info->hash > -1)
 		count -= 2;
 	return (count);
