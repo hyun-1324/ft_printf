@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:11:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/24 09:03:51 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/24 09:19:27 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int		putstr_n_for_px(char *s, int strlen, t_info *info, int decimal);
 int		calculate_str_length(t_info *info, int strlen, unsigned long decimal);
 int		process_px(t_info *info, unsigned long decimal, char *str, int strlen);
 int		put_hash(t_info *info, unsigned long p);
-int		put_zero_and_space(int printed_bytes, t_info *info, unsigned long decimal, \
-	int *count);
+int		put_zero_and_space(int printed_bytes, t_info *info, \
+unsigned long decimal, int *count);
 int		put_prefix_width(int printed_bytes, t_info *info, \
 	unsigned long decimal);
 int		put_prefix(int printed_bytes, t_info *info, unsigned long decimal);
