@@ -10,6 +10,7 @@ SRCS	= ft_printf_bonus.c ft_printf_utils_bonus.c\
 		  ft_printf_di_utils_bonus.c
 
 OBJS = $(SRCS:%.c=%.o)
+.SECONDARY: $(OBJS)
 AR = ar rcs
 RM = rm -f
 CC = cc
