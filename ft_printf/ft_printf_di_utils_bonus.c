@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:26:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 13:21:42 by donheo           ###   ########.fr       */
+/*   Updated: 2025/04/24 08:22:48 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	calculate_length_of_chars_for_di(t_info *info, int strlen, int di)
 	return (printed_bytes);
 }
 
-static int	count_len(long n)
+int	count_len(long n)
 {
 	int		len;
 	long	num;
@@ -74,7 +74,7 @@ static int	count_len(long n)
 	return (len);
 }
 
-static void	convert(int n, char *str, int len)
+void	convert(int n, char *str, int len)
 {
 	long	num;
 
