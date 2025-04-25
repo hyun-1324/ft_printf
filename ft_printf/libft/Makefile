@@ -19,9 +19,10 @@ SRCS = \
 	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 OBJS = $(SRCS:.c=.o)
-
 AR = ar rcs
 RM = rm -f
+
+.SECONDARY: $(OBJS)
 
 all: $(NAME)
 
