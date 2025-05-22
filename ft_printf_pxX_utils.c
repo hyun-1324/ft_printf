@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:36:16 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 16:06:41 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 16:22:59 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	print_px_padding(int printed_bytes, t_info *info, unsigned long decimal, \
 	return (*count);
 }
 
-int	print_prefix_with_width(int printed_bytes, t_info *info, unsigned long decimal)
+int	print_prefix_with_width(int printed_bytes, \
+	t_info *info, unsigned long decimal)
 {
 	int	count;
 

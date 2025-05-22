@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:01:07 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 16:08:30 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 16:22:41 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ static int	print_px_str(char *s, int str_len, t_info *info, int decimal)
 	return (i);
 }
 
-static int	compute_px_output_len(t_info *info, int str_len, unsigned long decimal)
+static int	compute_px_output_len(t_info *info, \
+	int str_len, unsigned long decimal)
 {
 	int	length;
 
@@ -80,7 +81,8 @@ static int	compute_px_output_len(t_info *info, int str_len, unsigned long decima
 	return (length);
 }
 
-static int	process_px(t_info *info, unsigned long decimal, char *str, int str_len)
+static int	process_px(t_info *info, unsigned long decimal, \
+	char *str, int str_len)
 {
 	int	printed_bytes;
 

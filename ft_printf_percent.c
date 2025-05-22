@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 09:30:46 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:43:16 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 16:22:07 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_percent()
+int	print_percent(void)
 {
 	return (write(1, "%", 1));
 }
