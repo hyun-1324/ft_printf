@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 08:45:36 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:22:34 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:56:20 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_zero(int strlen, t_info *info)
+int	print_zero(int strlen, t_info *info)
 {
 	int	i;
 	int	printed_bytes;
@@ -29,7 +29,7 @@ int	put_zero(int strlen, t_info *info)
 	return (printed_bytes);
 }
 
-int	put_space(int printed_bytes, t_info *info)
+int	print_space(int printed_bytes, t_info *info)
 {
 	int	count;
 

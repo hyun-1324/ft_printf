@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 09:37:27 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:50:25 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:55:49 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,15 @@ static int	process_di(t_info *info, int di, int digit_len, char *str)
 	if (info->minus > -1)
 	{
 		printed_bytes += print_sign_prefix(info, di);
-		printed_bytes += put_zero(digit_len, info);
+		printed_bytes += print_zero(digit_len, info);
 		printed_bytes += print_di_str(str, digit_len, info, di);
-		printed_bytes += put_space(printed_bytes, info);
+		printed_bytes += print_space(printed_bytes, info);
 	}
 	else
 	{
 		printed_bytes = compute_print_len_di(info, digit_len, di);
 		printed_bytes = print_sign_and_padding(printed_bytes, info, di);
-		printed_bytes += put_zero(digit_len, info);
+		printed_bytes += print_zero(digit_len, info);
 		printed_bytes += print_di_str(str, digit_len, info, di);
 	}
 	return (printed_bytes);

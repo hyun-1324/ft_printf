@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 12:17:42 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:29:29 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:58:07 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int	print_u(t_info *info, va_list args)
 	if (info->minus > -1)
 	{
 		printed_bytes += write_u_formatted(u, print_len, value, info);
-		printed_bytes += put_space(print_len, info);
+		printed_bytes += print_space(print_len, info);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 10:02:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:00:28 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:57:14 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ int	print_s(t_info *info, va_list args)
 	if (info->minus > -1)
 	{
 		printed_bytes += write_n_chars(s, print_len);
-		printed_bytes += put_space(printed_bytes, info);
+		printed_bytes += print_space(printed_bytes, info);
 	}
 	else
 	{
-		printed_bytes += put_space(print_len, info);
+		printed_bytes += print_space(print_len, info);
 		printed_bytes += write_n_chars(s, print_len);
 	}
 	return (printed_bytes);
