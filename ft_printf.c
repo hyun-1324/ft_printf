@@ -6,19 +6,19 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 17:08:58 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:26:36 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 09:42:26 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_arg(t_info *info, va_list args)
+static int	print_arg(t_info *info, va_list args)
 {
 	int	printed_bytes;
 
 	printed_bytes = 0;
 	if (info->type == '%')
-		printed_bytes = print_percent(info);
+		printed_bytes = print_percent();
 	else if (info->type == 'c')
 		printed_bytes = print_c(info, args);
 	else if (info->type == 's')
@@ -32,7 +32,7 @@ int	print_arg(t_info *info, va_list args)
 	return (printed_bytes);
 }
 
-int	init_parsing(const char *format, int *index, va_list args)
+static int	parse_specifier(const char *format, int *index, va_list args)
 {
 	t_info	info;
 	int		printed_bytes;
@@ -52,21 +52,19 @@ int	init_parsing(const char *format, int *index, va_list args)
 	return (printed_bytes);
 }
 
-int	parse_format(const char *format, va_list args)
+static int	parse_format(const char *format, va_list args)
 {
 	int	printed_size;
 	int	index;
-	int	*index_ptr;
 
 	printed_size = 0;
 	index = 0;
-	index_ptr = &index;
 	while (format[index])
 	{
 		if (format[index] == '%')
 		{
 			index++;
-			printed_size += init_parsing(format, index_ptr, args);
+			printed_size += parse_specifier(format, &index, args);
 		}
 		else
 			printed_size += write(1, &(format[index]), 1);
