@@ -2,5 +2,3 @@ a.out
 .vscode/
 libft.a
 libftprintf.a
-test.c
-test2.c

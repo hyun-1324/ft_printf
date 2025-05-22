@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_type_utils_bonus.c                       :+:      :+:    :+:   */
+/*   ft_printf_type_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 08:45:36 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 13:21:56 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 09:26:50 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 int	put_space_or_zero(int printed_bytes, t_info *info)
 {
