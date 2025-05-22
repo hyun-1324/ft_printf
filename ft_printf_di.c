@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 09:37:27 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:27:14 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:50:25 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_sign_prefix(t_info *info, int di)
+static int	print_sign_prefix(t_info *info, int di)
 {
 	int	printed_bytes;
 
@@ -41,7 +41,7 @@ int	put_sign_prefix(t_info *info, int di)
 	return (printed_bytes);
 }
 
-int	put_flag_prefix_with_width(int printed_bytes, t_info *info, int di)
+static int	print_prefix_with_padding(int printed_bytes, t_info *info, int di)
 {
 	char	pad;
 	int		count;
@@ -50,9 +50,9 @@ int	put_flag_prefix_with_width(int printed_bytes, t_info *info, int di)
 	if (info->zero > -1 && info->period == -1)
 	{
 		if (di >= 0)
-			count += put_sign_prefix(info, di);
+			count += print_sign_prefix(info, di);
 		else if (di < 0)
-			put_sign_prefix(info, di);
+			print_sign_prefix(info, di);
 		pad = '0';
 	}
 	else
@@ -63,42 +63,42 @@ int	put_flag_prefix_with_width(int printed_bytes, t_info *info, int di)
 		count++;
 	}
 	if (pad == ' ')
-		count += put_sign_prefix(info, di);
+		count += print_sign_prefix(info, di);
 	else if (di < 0)
 		count++;
 	return (count);
 }
 
-int	put_flag_prefix(int printed_bytes, t_info *info, int di)
+static int	print_sign_and_padding(int printed_bytes, t_info *info, int di)
 {
 	int		count;
 
 	count = 0;
 	if (info->width > 0)
-		count += put_flag_prefix_with_width(printed_bytes, info, di);
+		count += print_prefix_with_padding(printed_bytes, info, di);
 	else if (info->plus > -1 || info->space > -1 || di < 0)
-		count += put_sign_prefix(info, di);
+		count += print_sign_prefix(info, di);
 	return (count);
 }
 
-int	process_di(t_info *info, int di, int strlen, char *str)
+static int	process_di(t_info *info, int di, int digit_len, char *str)
 {
 	int		printed_bytes;
 
 	printed_bytes = 0;
 	if (info->minus > -1)
 	{
-		printed_bytes += put_sign_prefix(info, di);
-		printed_bytes += put_zero(strlen, info);
-		printed_bytes += putstr_n_for_di(str, strlen, info, di);
+		printed_bytes += print_sign_prefix(info, di);
+		printed_bytes += put_zero(digit_len, info);
+		printed_bytes += print_di_str(str, digit_len, info, di);
 		printed_bytes += put_space(printed_bytes, info);
 	}
 	else
 	{
-		printed_bytes = calculate_length_of_chars_for_di(info, strlen, di);
-		printed_bytes = put_flag_prefix(printed_bytes, info, di);
-		printed_bytes += put_zero(strlen, info);
-		printed_bytes += putstr_n_for_di(str, strlen, info, di);
+		printed_bytes = compute_print_len_di(info, digit_len, di);
+		printed_bytes = print_sign_and_padding(printed_bytes, info, di);
+		printed_bytes += put_zero(digit_len, info);
+		printed_bytes += print_di_str(str, digit_len, info, di);
 	}
 	return (printed_bytes);
 }
@@ -106,23 +106,23 @@ int	process_di(t_info *info, int di, int strlen, char *str)
 int	print_di(t_info *info, va_list args)
 {
 	int		printed_bytes;
-	int		di;
+	int		value;
 	long	long_di;
-	int		strlen;
+	int		digit_len;
 	char	*str;
 
 	printed_bytes = 0;
-	di = va_arg(args, int);
-	long_di = (long)di;
-	if (di < 0)
+	value = va_arg(args, int);
+	long_di = (long)value;
+	if (value < 0)
 		str = ft_itoa_for_long(-long_di);
-	else if (di == 0 && info->period > -1 && info->precision == 0 \
+	else if (value == 0 && info->period > -1 && info->precision == 0 \
 		&& info->width == -1)
 		return (printed_bytes);
 	else
-		str = ft_itoa(di);
-	strlen = ft_strlen(str);
-	printed_bytes = process_di(info, di, strlen, str);
+		str = ft_itoa(value);
+	digit_len = ft_strlen(str);
+	printed_bytes = process_di(info, value, digit_len, str);
 	free(str);
 	return (printed_bytes);
 }

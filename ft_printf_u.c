@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 12:17:42 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:26:44 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:29:29 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_space_or_zero_for_u(int printed_bytes, t_info *info)
+static int	print_u_padding(int printed_bytes, t_info *info)
 {
 	int	count;
 
@@ -36,7 +36,7 @@ int	put_space_or_zero_for_u(int printed_bytes, t_info *info)
 	return (count);
 }
 
-int	putstr_n_for_u(char *s, int strlen, unsigned int u, t_info *info)
+static int	write_u_formatted(char *s, int strlen, unsigned int u, t_info *info)
 {
 	int	i;
 
@@ -65,7 +65,7 @@ int	putstr_n_for_u(char *s, int strlen, unsigned int u, t_info *info)
 	return (i);
 }
 
-char	*fill_unsigned_str(unsigned int n, char *str, int len, int tmp)
+static char	*fill_u_str_with_zeros(unsigned int n, char *str, int len, int tmp)
 {
 	str[len + tmp] = '\0';
 	while (len--)
@@ -78,56 +78,56 @@ char	*fill_unsigned_str(unsigned int n, char *str, int len, int tmp)
 	return (str);
 }
 
-char	*ft_utoa(unsigned int n, t_info *info)
+static char	*ft_utoa(unsigned int n, t_info *info)
 {
-	unsigned int	tmp;
-	int				len;
+	unsigned int	leading_zero;
+	int				digit_len;
 	char			*str;
 
-	tmp = n / 10;
-	len = 1;
-	while (tmp)
+	leading_zero = n / 10;
+	digit_len = 1;
+	while (leading_zero)
 	{
-		len++;
-		tmp = tmp / 10;
+		digit_len++;
+		leading_zero = leading_zero / 10;
 	}
-	if (info->precision > len)
+	if (info->precision > digit_len)
 	{
 		str = (char *)malloc(info->precision + 1);
-		tmp = info->precision - len;
+		leading_zero = info->precision - digit_len;
 	}
 	else if (info->period != -1 && n == 0 && info->width == -1)
 		return (NULL);
 	else
-		str = (char *)malloc(len + 1);
+		str = (char *)malloc(digit_len + 1);
 	if (!str)
 		return (NULL);
-	str = fill_unsigned_str(n, str, len, tmp);
+	str = fill_u_str_with_zeros(n, str, digit_len, leading_zero);
 	return (str);
 }
 
 int	print_u(t_info *info, va_list args)
 {
 	int				printed_bytes;
-	int				strlen;
-	unsigned int	i;
+	int				print_len;
+	unsigned int	value;
 	char			*u;
 
 	printed_bytes = 0;
-	i = va_arg(args, unsigned int);
-	u = ft_utoa(i, info);
+	value = va_arg(args, unsigned int);
+	u = ft_utoa(value, info);
 	if (!u)
 		return (0);
-	strlen = ft_strlen(u);
+	print_len = ft_strlen(u);
 	if (info->minus > -1)
 	{
-		printed_bytes += putstr_n_for_u(u, strlen, i, info);
-		printed_bytes += put_space(strlen, info);
+		printed_bytes += write_u_formatted(u, print_len, value, info);
+		printed_bytes += put_space(print_len, info);
 	}
 	else
 	{
-		printed_bytes += put_space_or_zero_for_u(strlen, info);
-		printed_bytes += putstr_n_for_u(u, strlen, i, info);
+		printed_bytes += print_u_padding(print_len, info);
+		printed_bytes += write_u_formatted(u, print_len, value, info);
 	}
 	free(u);
 	return (printed_bytes);

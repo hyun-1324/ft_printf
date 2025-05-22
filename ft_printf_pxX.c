@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:01:07 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:27:00 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:53:51 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*change_deciaml_to_hexa(t_info *info, unsigned long p)
+char	*change_decimal_to_hexa(t_info *info, unsigned long p)
 {
 	const char	*base;
 	char		buffer[9];
@@ -114,7 +114,7 @@ int	print_px(t_info *info, va_list args)
 		decimal = (unsigned long)va_arg(args, void *);
 	else
 		decimal = (unsigned long)va_arg(args, unsigned int);
-	str = change_deciaml_to_hexa(info, decimal);
+	str = change_decimal_to_hexa(info, decimal);
 	strlen = ft_strlen(str);
 	printed_bytes += process_px(info, decimal, str, strlen);
 	free(str);

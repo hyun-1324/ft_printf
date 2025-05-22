@@ -6,11 +6,24 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 08:24:38 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:27:24 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 14:31:07 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	print_padding_space(t_info *info)
+{
+	int	padding;
+
+	padding = 0;
+	while (info->width > (padding + 1))
+	{
+		write(1, " ", 1);
+		padding++;
+	}
+	return (padding);
+}
 
 int	print_c(t_info *info, va_list args)
 {

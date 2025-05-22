@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:26:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:27:19 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:45:34 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	putstr_n_for_di(char *s, int strlen, t_info *info, int di)
+int	print_di_str(char *s, int strlen, t_info *info, int di)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ int	putstr_n_for_di(char *s, int strlen, t_info *info, int di)
 	return (i);
 }
 
-int	calculate_length_of_chars_for_di(t_info *info, int strlen, int di)
+int	compute_print_len_di(t_info *info, int strlen, int di)
 {
 	int	printed_bytes;
 
@@ -52,7 +52,7 @@ int	calculate_length_of_chars_for_di(t_info *info, int strlen, int di)
 	return (printed_bytes);
 }
 
-int	count_len(long n)
+int	count_digits(long n)
 {
 	int		len;
 	long	num;
@@ -74,7 +74,7 @@ int	count_len(long n)
 	return (len);
 }
 
-void	convert(int n, char *str, int len)
+void	long_to_str(int n, char *str, int len)
 {
 	long	num;
 
@@ -99,10 +99,10 @@ char	*ft_itoa_for_long(long n)
 	int		len;
 	char	*str;
 
-	len = count_len(n);
+	len = count_digits(n);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	convert(n, str, len);
+	long_to_str(n, str, len);
 	return (str);
 }
