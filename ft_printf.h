@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:11:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 16:21:59 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 16:26:13 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include "./libft/libft.h"
 
+// Struct to store format specifier and flag information
 typedef struct s_info
 {
 	char	type;
@@ -30,12 +31,13 @@ typedef struct s_info
 	int		precision;
 }		t_info;
 
-// Helper functions for main logic
+// Core helper functions for parsing and initialization
 int		update_info(t_info *info, const char *format, int index);
 int		process_zero(t_info *info, int index);
 void	init_info(t_info *info);
 int		ft_printf(const char *format, ...);
 
+// Functions for printing each format specifier
 int		print_percent(void);
 int		print_c(t_info *info, va_list args);
 int		print_s(t_info *info, va_list args);
