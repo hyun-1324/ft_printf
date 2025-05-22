@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:11:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 16:06:09 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/22 16:09:27 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ typedef struct s_info
 	int		precision;
 }		t_info;
 
-int		ft_printf(const char *format, ...);
 int		update_info(t_info *info, const char *format, int index);
 int		process_zero(t_info *info, int index);
 void	init_info(t_info *info);
+int		ft_printf(const char *format, ...);
 
 int		print_percent();
 int		print_c(t_info *info, va_list args);
