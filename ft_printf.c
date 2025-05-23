@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 17:08:58 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:42:26 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/23 13:33:28 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	print_arg(t_info *info, va_list args)
 
 	printed_bytes = 0;
 	if (info->type == '%')
-		printed_bytes = print_percent();
+		printed_bytes = write(1, "%", 1);
 	else if (info->type == 'c')
 		printed_bytes = print_c(info, args);
 	else if (info->type == 's')

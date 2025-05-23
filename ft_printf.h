@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:11:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 16:26:45 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/23 13:33:40 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	init_info(t_info *info);
 int		ft_printf(const char *format, ...);
 
 // Functions for printing each format specifier
-int		print_percent(void);
 int		print_c(t_info *info, va_list args);
 int		print_s(t_info *info, va_list args);
 int		print_u(t_info *info, va_list args);
