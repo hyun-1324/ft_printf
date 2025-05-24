@@ -40,7 +40,7 @@ This will generate the static library `libftprintf.a`.
 ### 💡 Example
 
 ```c
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int main(void)
 {
