@@ -35,8 +35,6 @@ $(NAME) : $(OBJS)
 %.o : %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-bonus: all
-
 clean :
 	$(RM) $(OBJS)
 	@make clean -C $(LIBFT)
