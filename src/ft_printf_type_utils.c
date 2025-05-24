@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 08:45:36 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:56:20 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:23:09 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int	print_zero(int strlen, t_info *info)
 {

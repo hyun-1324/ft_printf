@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:36:16 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 16:22:59 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:22:57 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int	print_hash(t_info *info, unsigned long p)
 {

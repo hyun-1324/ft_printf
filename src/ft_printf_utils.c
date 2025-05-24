@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 00:20:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 09:26:40 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:23:16 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 void	init_info(t_info *info)
 {
