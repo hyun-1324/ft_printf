@@ -21,10 +21,8 @@ $(NAME) : $(OBJS)
 	cp $(LIBFT)/$(LIBFT_LIB) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 
-%.o : %.c ft_printf_bonus.h
+%.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-bonus: all
 
 clean :
 	$(RM) $(OBJS)
