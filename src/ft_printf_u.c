@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 12:17:42 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:58:07 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:23:12 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static int	print_u_padding(int printed_bytes, t_info *info)
 {

@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 08:24:38 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 14:31:07 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:22:43 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static int	print_padding_space(t_info *info)
 {

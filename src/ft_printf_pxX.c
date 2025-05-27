@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:01:07 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 16:22:41 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:23:01 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static char	*change_decimal_to_hexa(t_info *info, unsigned long decimal)
 {

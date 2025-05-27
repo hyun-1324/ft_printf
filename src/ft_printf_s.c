@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 10:02:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:57:14 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:23:05 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static int	get_print_len(char *s, t_info *info)
 {

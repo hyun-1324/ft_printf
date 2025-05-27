@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 17:08:58 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/23 13:33:28 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:23:21 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static int	print_arg(t_info *info, va_list args)
 {

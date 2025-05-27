@@ -6,11 +6,11 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 09:37:27 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/22 15:55:49 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/24 17:22:53 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static int	print_sign_prefix(t_info *info, int di)
 {
